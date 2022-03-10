@@ -27,6 +27,11 @@ Route::get('/', function () {
     ]);
 });
 
+    Route::get('/sample', function () {
+        return Inertia::render('Sample');
+    });
+
+
     Route::group(['middleware' => 'auth:sanctum', 'verified'], function(){
 
         Route::get('/dashboard', [ProjectsController::class, 'index'])->name('dashboard');
